@@ -146,7 +146,6 @@ const Home = () => {
               </motion.div>
             ))}
           </div>
-          </motion.div>
         </div>
       </section>
 
