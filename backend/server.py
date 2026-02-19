@@ -487,6 +487,518 @@ async def get_assessment_detail(assessment_id: str):
                 "11-20": {"level": "Moderate Burnout", "description": "Moderate burnout. Consider implementing stress management strategies and taking regular breaks.", "color": "#D4A373"},
                 "21-32": {"level": "High Burnout", "description": "High burnout levels. It's important to seek support and make significant changes to reduce stress.", "color": "#E07A5F"}
             }
+        },
+        "overthinking": {
+            "id": "overthinking",
+            "name": "Overthinking Assessment",
+            "description": "This assessment evaluates rumination and repetitive negative thinking patterns.",
+            "questions": [
+                {
+                    "id": 1,
+                    "text": "I find myself replaying conversations or events over and over",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 2,
+                    "text": "I have difficulty making decisions because I overanalyze options",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 3,
+                    "text": "My mind races with 'what if' scenarios",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 4,
+                    "text": "I struggle to let go of mistakes or embarrassing moments",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 5,
+                    "text": "Overthinking keeps me awake at night",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 6,
+                    "text": "I second-guess myself frequently",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 7,
+                    "text": "I analyze what others think about me excessively",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                }
+            ],
+            "interpretation": {
+                "0-9": {"level": "Minimal", "description": "Minimal overthinking patterns. Your thought processes appear balanced and manageable.", "color": "#4A6741"},
+                "10-17": {"level": "Moderate", "description": "Moderate overthinking tendencies. Consider mindfulness practices to help quiet racing thoughts.", "color": "#D4A373"},
+                "18-28": {"level": "Significant", "description": "Significant overthinking patterns. Professional guidance can help you develop healthier thought patterns.", "color": "#E07A5F"}
+            }
+        },
+        "emotional_exhaustion": {
+            "id": "emotional_exhaustion",
+            "name": "Emotional Exhaustion Assessment",
+            "description": "Evaluates emotional depletion and capacity for emotional engagement.",
+            "questions": [
+                {
+                    "id": 1,
+                    "text": "I feel emotionally drained and depleted",
+                    "options": [
+                        {"text": "Never", "value": 0},
+                        {"text": "Rarely", "value": 1},
+                        {"text": "Sometimes", "value": 2},
+                        {"text": "Often", "value": 3},
+                        {"text": "Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 2,
+                    "text": "I have little energy for things I once enjoyed",
+                    "options": [
+                        {"text": "Never", "value": 0},
+                        {"text": "Rarely", "value": 1},
+                        {"text": "Sometimes", "value": 2},
+                        {"text": "Often", "value": 3},
+                        {"text": "Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 3,
+                    "text": "I feel overwhelmed by other people's emotions",
+                    "options": [
+                        {"text": "Never", "value": 0},
+                        {"text": "Rarely", "value": 1},
+                        {"text": "Sometimes", "value": 2},
+                        {"text": "Often", "value": 3},
+                        {"text": "Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 4,
+                    "text": "I need more time alone to recharge than usual",
+                    "options": [
+                        {"text": "Never", "value": 0},
+                        {"text": "Rarely", "value": 1},
+                        {"text": "Sometimes", "value": 2},
+                        {"text": "Often", "value": 3},
+                        {"text": "Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 5,
+                    "text": "I feel numb or disconnected from my feelings",
+                    "options": [
+                        {"text": "Never", "value": 0},
+                        {"text": "Rarely", "value": 1},
+                        {"text": "Sometimes", "value": 2},
+                        {"text": "Often", "value": 3},
+                        {"text": "Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 6,
+                    "text": "Small tasks feel emotionally overwhelming",
+                    "options": [
+                        {"text": "Never", "value": 0},
+                        {"text": "Rarely", "value": 1},
+                        {"text": "Sometimes", "value": 2},
+                        {"text": "Often", "value": 3},
+                        {"text": "Always", "value": 4}
+                    ]
+                }
+            ],
+            "interpretation": {
+                "0-8": {"level": "Low", "description": "Low emotional exhaustion. Your emotional reserves appear healthy.", "color": "#4A6741"},
+                "9-16": {"level": "Moderate", "description": "Moderate emotional exhaustion. Prioritize self-care and emotional boundaries.", "color": "#D4A373"},
+                "17-24": {"level": "High", "description": "High emotional exhaustion. Consider seeking support to restore your emotional wellbeing.", "color": "#E07A5F"}
+            }
+        },
+        "nervous_system": {
+            "id": "nervous_system",
+            "name": "Nervous System Health Assessment",
+            "description": "Evaluates nervous system regulation and stress response patterns.",
+            "questions": [
+                {
+                    "id": 1,
+                    "text": "I feel on edge or easily startled",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 2,
+                    "text": "My heart races or pounds for no clear reason",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 3,
+                    "text": "I have difficulty calming down after stress",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 4,
+                    "text": "I experience muscle tension or jaw clenching",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 5,
+                    "text": "I feel disconnected from my body or surroundings",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 6,
+                    "text": "I have digestive issues related to stress",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 7,
+                    "text": "I struggle with sleep or have vivid dreams",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                }
+            ],
+            "interpretation": {
+                "0-9": {"level": "Regulated", "description": "Well-regulated nervous system. Your stress response appears balanced.", "color": "#4A6741"},
+                "10-18": {"level": "Moderately Dysregulated", "description": "Moderate dysregulation. Practice nervous system regulation techniques like breathing exercises.", "color": "#D4A373"},
+                "19-28": {"level": "Significantly Dysregulated", "description": "Significant dysregulation. Consider working with a therapist specializing in nervous system regulation.", "color": "#E07A5F"}
+            }
+        },
+        "fatigue": {
+            "id": "fatigue",
+            "name": "Fatigue Assessment",
+            "description": "Evaluates physical and mental fatigue levels.",
+            "questions": [
+                {
+                    "id": 1,
+                    "text": "I feel tired even after adequate sleep",
+                    "options": [
+                        {"text": "Never", "value": 0},
+                        {"text": "Rarely", "value": 1},
+                        {"text": "Sometimes", "value": 2},
+                        {"text": "Often", "value": 3},
+                        {"text": "Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 2,
+                    "text": "Physical activity exhausts me quickly",
+                    "options": [
+                        {"text": "Never", "value": 0},
+                        {"text": "Rarely", "value": 1},
+                        {"text": "Sometimes", "value": 2},
+                        {"text": "Often", "value": 3},
+                        {"text": "Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 3,
+                    "text": "I struggle to concentrate due to tiredness",
+                    "options": [
+                        {"text": "Never", "value": 0},
+                        {"text": "Rarely", "value": 1},
+                        {"text": "Sometimes", "value": 2},
+                        {"text": "Often", "value": 3},
+                        {"text": "Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 4,
+                    "text": "Fatigue interferes with my daily activities",
+                    "options": [
+                        {"text": "Never", "value": 0},
+                        {"text": "Rarely", "value": 1},
+                        {"text": "Sometimes", "value": 2},
+                        {"text": "Often", "value": 3},
+                        {"text": "Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 5,
+                    "text": "I feel mentally foggy or slow",
+                    "options": [
+                        {"text": "Never", "value": 0},
+                        {"text": "Rarely", "value": 1},
+                        {"text": "Sometimes", "value": 2},
+                        {"text": "Often", "value": 3},
+                        {"text": "Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 6,
+                    "text": "I lack motivation to start tasks",
+                    "options": [
+                        {"text": "Never", "value": 0},
+                        {"text": "Rarely", "value": 1},
+                        {"text": "Sometimes", "value": 2},
+                        {"text": "Often", "value": 3},
+                        {"text": "Always", "value": 4}
+                    ]
+                }
+            ],
+            "interpretation": {
+                "0-8": {"level": "Minimal Fatigue", "description": "Minimal fatigue. Your energy levels appear adequate for daily functioning.", "color": "#4A6741"},
+                "9-16": {"level": "Moderate Fatigue", "description": "Moderate fatigue. Consider lifestyle adjustments and consult a healthcare provider if persistent.", "color": "#D4A373"},
+                "17-24": {"level": "Severe Fatigue", "description": "Severe fatigue. Medical evaluation is recommended to rule out underlying conditions.", "color": "#E07A5F"}
+            }
+        },
+        "social_anxiety": {
+            "id": "social_anxiety",
+            "name": "Social Anxiety Assessment",
+            "description": "Screens for social anxiety and discomfort in social situations.",
+            "questions": [
+                {
+                    "id": 1,
+                    "text": "I fear being judged or embarrassed in social situations",
+                    "options": [
+                        {"text": "Not at all", "value": 0},
+                        {"text": "A little", "value": 1},
+                        {"text": "Somewhat", "value": 2},
+                        {"text": "Very much", "value": 3},
+                        {"text": "Extremely", "value": 4}
+                    ]
+                },
+                {
+                    "id": 2,
+                    "text": "I avoid social gatherings or events",
+                    "options": [
+                        {"text": "Not at all", "value": 0},
+                        {"text": "A little", "value": 1},
+                        {"text": "Somewhat", "value": 2},
+                        {"text": "Very much", "value": 3},
+                        {"text": "Extremely", "value": 4}
+                    ]
+                },
+                {
+                    "id": 3,
+                    "text": "Speaking in front of others makes me very anxious",
+                    "options": [
+                        {"text": "Not at all", "value": 0},
+                        {"text": "A little", "value": 1},
+                        {"text": "Somewhat", "value": 2},
+                        {"text": "Very much", "value": 3},
+                        {"text": "Extremely", "value": 4}
+                    ]
+                },
+                {
+                    "id": 4,
+                    "text": "I worry about saying or doing the wrong thing",
+                    "options": [
+                        {"text": "Not at all", "value": 0},
+                        {"text": "A little", "value": 1},
+                        {"text": "Somewhat", "value": 2},
+                        {"text": "Very much", "value": 3},
+                        {"text": "Extremely", "value": 4}
+                    ]
+                },
+                {
+                    "id": 5,
+                    "text": "I feel uncomfortable being the center of attention",
+                    "options": [
+                        {"text": "Not at all", "value": 0},
+                        {"text": "A little", "value": 1},
+                        {"text": "Somewhat", "value": 2},
+                        {"text": "Very much", "value": 3},
+                        {"text": "Extremely", "value": 4}
+                    ]
+                },
+                {
+                    "id": 6,
+                    "text": "I experience physical symptoms (sweating, trembling) in social settings",
+                    "options": [
+                        {"text": "Not at all", "value": 0},
+                        {"text": "A little", "value": 1},
+                        {"text": "Somewhat", "value": 2},
+                        {"text": "Very much", "value": 3},
+                        {"text": "Extremely", "value": 4}
+                    ]
+                },
+                {
+                    "id": 7,
+                    "text": "I replay social interactions afterwards, analyzing what I said",
+                    "options": [
+                        {"text": "Not at all", "value": 0},
+                        {"text": "A little", "value": 1},
+                        {"text": "Somewhat", "value": 2},
+                        {"text": "Very much", "value": 3},
+                        {"text": "Extremely", "value": 4}
+                    ]
+                }
+            ],
+            "interpretation": {
+                "0-8": {"level": "Minimal", "description": "Minimal social anxiety. You appear comfortable in most social situations.", "color": "#4A6741"},
+                "9-17": {"level": "Moderate", "description": "Moderate social anxiety. Consider gradual exposure and cognitive strategies to build confidence.", "color": "#D4A373"},
+                "18-28": {"level": "Significant", "description": "Significant social anxiety. Professional support can help you engage more comfortably in social situations.", "color": "#E07A5F"}
+            }
+        },
+        "people_pleasing": {
+            "id": "people_pleasing",
+            "name": "People Pleasing Assessment",
+            "description": "Evaluates people-pleasing tendencies and boundary-setting abilities.",
+            "questions": [
+                {
+                    "id": 1,
+                    "text": "I have difficulty saying 'no' to requests",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 2,
+                    "text": "I prioritize others' needs over my own",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 3,
+                    "text": "I worry excessively about disappointing others",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 4,
+                    "text": "I apologize frequently, even when not at fault",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 5,
+                    "text": "I avoid conflict at all costs",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 6,
+                    "text": "I feel responsible for others' emotions",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                },
+                {
+                    "id": 7,
+                    "text": "I struggle to express my true opinions or preferences",
+                    "options": [
+                        {"text": "Rarely", "value": 0},
+                        {"text": "Sometimes", "value": 1},
+                        {"text": "Often", "value": 2},
+                        {"text": "Very Often", "value": 3},
+                        {"text": "Almost Always", "value": 4}
+                    ]
+                }
+            ],
+            "interpretation": {
+                "0-9": {"level": "Healthy Boundaries", "description": "Healthy balance between helping others and self-care. You maintain good boundaries.", "color": "#4A6741"},
+                "10-18": {"level": "Moderate People Pleasing", "description": "Moderate people-pleasing tendencies. Work on setting boundaries and honoring your own needs.", "color": "#D4A373"},
+                "19-28": {"level": "Significant People Pleasing", "description": "Significant people-pleasing patterns. Consider therapy to develop healthier boundaries and self-advocacy.", "color": "#E07A5F"}
+            }
         }
     }
     
