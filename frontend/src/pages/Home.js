@@ -69,13 +69,13 @@ const Home = () => {
             >
               <Instagram className="w-5 h-5 text-secondary" strokeWidth={1.5} />
               <a
-                href="https://instagram.com/onethoughtfortherapy"
+                href="https://www.instagram.com/onethoughtformentalhealth?igsh=bzRnd3podWZiMnpj"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground font-body font-semibold hover:text-primary transition-colors"
                 data-testid="instagram-link"
               >
-                @onethoughtfortherapy
+                @onethoughtformentalhealth
               </a>
             </motion.div>
           </motion.div>
