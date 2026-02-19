@@ -54,6 +54,14 @@ async def get_assessments():
             "image": "https://images.unsplash.com/photo-1590554790703-7212ae90548c"
         },
         {
+            "id": "social_anxiety",
+            "name": "Social Anxiety Assessment",
+            "short_name": "Social Anxiety",
+            "description": "Social Phobia Screening",
+            "duration": "2-3 minutes",
+            "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2"
+        },
+        {
             "id": "asrs",
             "name": "ADHD Screening",
             "short_name": "ASRS",
@@ -68,6 +76,46 @@ async def get_assessments():
             "description": "Professional Burnout Inventory",
             "duration": "3 minutes",
             "image": "https://images.unsplash.com/photo-1708897721671-44f660072266"
+        },
+        {
+            "id": "overthinking",
+            "name": "Overthinking Assessment",
+            "short_name": "Overthinking",
+            "description": "Rumination & Worry Patterns",
+            "duration": "2 minutes",
+            "image": "https://images.unsplash.com/photo-1507413245164-6160d8298b31"
+        },
+        {
+            "id": "emotional_exhaustion",
+            "name": "Emotional Exhaustion",
+            "short_name": "Emotional Burnout",
+            "description": "Emotional Depletion Assessment",
+            "duration": "2 minutes",
+            "image": "https://images.unsplash.com/photo-1543466835-00a7907e9de1"
+        },
+        {
+            "id": "nervous_system",
+            "name": "Nervous System Health",
+            "short_name": "Nervous System",
+            "description": "Nervous System Regulation",
+            "duration": "3 minutes",
+            "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2"
+        },
+        {
+            "id": "fatigue",
+            "name": "Fatigue Assessment",
+            "short_name": "Fatigue Scale",
+            "description": "Energy & Fatigue Screening",
+            "duration": "2 minutes",
+            "image": "https://images.unsplash.com/photo-1541480551145-2370a440d585"
+        },
+        {
+            "id": "people_pleasing",
+            "name": "People Pleasing Patterns",
+            "short_name": "People Pleasing",
+            "description": "Boundary & Self-Care Assessment",
+            "duration": "2-3 minutes",
+            "image": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
         }
     ]
     return assessments
