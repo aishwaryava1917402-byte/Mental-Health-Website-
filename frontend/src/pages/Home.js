@@ -160,6 +160,7 @@ const Home = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
           </motion.div>
         </div>
       </section>
