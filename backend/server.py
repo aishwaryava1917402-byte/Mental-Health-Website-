@@ -1007,6 +1007,175 @@ async def get_assessment_detail(assessment_id: str):
                 "10-18": {"level": "Moderate People Pleasing", "description": "Moderate people-pleasing tendencies. Work on setting boundaries and honoring your own needs.", "color": "#D4A373"},
                 "19-28": {"level": "Significant People Pleasing", "description": "Significant people-pleasing patterns. Consider therapy to develop healthier boundaries and self-advocacy.", "color": "#E07A5F"}
             }
+        },
+        "mbti": {
+            "id": "mbti",
+            "name": "MBTI Personality Test",
+            "description": "Discover your Myers-Briggs personality type across four dimensions: Extraversion/Introversion, Sensing/Intuition, Thinking/Feeling, and Judging/Perceiving.",
+            "questions": [
+                {
+                    "id": 1,
+                    "text": "At a party, I usually",
+                    "dimension": "E/I",
+                    "options": [
+                        {"text": "Interact with many people, including strangers", "value": "E"},
+                        {"text": "Interact with a few close friends", "value": "I"}
+                    ]
+                },
+                {
+                    "id": 2,
+                    "text": "I feel more energized when",
+                    "dimension": "E/I",
+                    "options": [
+                        {"text": "Being around people and social activities", "value": "E"},
+                        {"text": "Having time alone or with one close person", "value": "I"}
+                    ]
+                },
+                {
+                    "id": 3,
+                    "text": "I prefer to",
+                    "dimension": "E/I",
+                    "options": [
+                        {"text": "Think out loud and discuss ideas with others", "value": "E"},
+                        {"text": "Think things through privately before sharing", "value": "I"}
+                    ]
+                },
+                {
+                    "id": 4,
+                    "text": "In a group setting, I tend to",
+                    "dimension": "E/I",
+                    "options": [
+                        {"text": "Take the initiative and lead conversations", "value": "E"},
+                        {"text": "Listen more and contribute when asked", "value": "I"}
+                    ]
+                },
+                {
+                    "id": 5,
+                    "text": "I am more interested in",
+                    "dimension": "S/N",
+                    "options": [
+                        {"text": "Facts, details, and what is real", "value": "S"},
+                        {"text": "Possibilities, meanings, and what could be", "value": "N"}
+                    ]
+                },
+                {
+                    "id": 6,
+                    "text": "When learning something new, I prefer",
+                    "dimension": "S/N",
+                    "options": [
+                        {"text": "Step-by-step instructions and practical examples", "value": "S"},
+                        {"text": "Understanding the big picture and theory first", "value": "N"}
+                    ]
+                },
+                {
+                    "id": 7,
+                    "text": "I trust",
+                    "dimension": "S/N",
+                    "options": [
+                        {"text": "Experience and proven methods", "value": "S"},
+                        {"text": "Intuition and innovative approaches", "value": "N"}
+                    ]
+                },
+                {
+                    "id": 8,
+                    "text": "I am more drawn to",
+                    "dimension": "S/N",
+                    "options": [
+                        {"text": "Realistic and practical matters", "value": "S"},
+                        {"text": "Imaginative and abstract ideas", "value": "N"}
+                    ]
+                },
+                {
+                    "id": 9,
+                    "text": "When making decisions, I prioritize",
+                    "dimension": "T/F",
+                    "options": [
+                        {"text": "Logic, objectivity, and fairness", "value": "T"},
+                        {"text": "Harmony, values, and people's feelings", "value": "F"}
+                    ]
+                },
+                {
+                    "id": 10,
+                    "text": "I am more comfortable with",
+                    "dimension": "T/F",
+                    "options": [
+                        {"text": "Analyzing problems objectively", "value": "T"},
+                        {"text": "Understanding people's emotional needs", "value": "F"}
+                    ]
+                },
+                {
+                    "id": 11,
+                    "text": "In conflicts, I value",
+                    "dimension": "T/F",
+                    "options": [
+                        {"text": "Finding the truth and being right", "value": "T"},
+                        {"text": "Maintaining relationships and empathy", "value": "F"}
+                    ]
+                },
+                {
+                    "id": 12,
+                    "text": "People describe me as more",
+                    "dimension": "T/F",
+                    "options": [
+                        {"text": "Rational and straightforward", "value": "T"},
+                        {"text": "Compassionate and tactful", "value": "F"}
+                    ]
+                },
+                {
+                    "id": 13,
+                    "text": "I prefer to",
+                    "dimension": "J/P",
+                    "options": [
+                        {"text": "Have things decided and organized", "value": "J"},
+                        {"text": "Keep options open and flexible", "value": "P"}
+                    ]
+                },
+                {
+                    "id": 14,
+                    "text": "My workspace is usually",
+                    "dimension": "J/P",
+                    "options": [
+                        {"text": "Neat, structured, and well-planned", "value": "J"},
+                        {"text": "Casual, adaptable, with organized chaos", "value": "P"}
+                    ]
+                },
+                {
+                    "id": 15,
+                    "text": "I approach deadlines by",
+                    "dimension": "J/P",
+                    "options": [
+                        {"text": "Planning ahead and finishing early", "value": "J"},
+                        {"text": "Working closer to the deadline with flexibility", "value": "P"}
+                    ]
+                },
+                {
+                    "id": 16,
+                    "text": "I feel more satisfied when",
+                    "dimension": "J/P",
+                    "options": [
+                        {"text": "Tasks are completed and checked off", "value": "J"},
+                        {"text": "Exploring new possibilities and options", "value": "P"}
+                    ]
+                }
+            ],
+            "types": {
+                "INTJ": {"name": "The Architect", "description": "Strategic, analytical, and independent thinkers who love solving complex problems.", "strengths": "Innovative, determined, strategic thinking", "color": "#4A6741"},
+                "INTP": {"name": "The Logician", "description": "Curious and inventive thinkers with an endless thirst for knowledge.", "strengths": "Analytical, original, open-minded", "color": "#4A6741"},
+                "ENTJ": {"name": "The Commander", "description": "Bold, imaginative leaders who always find or create solutions.", "strengths": "Efficient, confident, natural leaders", "color": "#4A6741"},
+                "ENTP": {"name": "The Debater", "description": "Smart, curious thinkers who love intellectual challenges.", "strengths": "Quick-witted, innovative, versatile", "color": "#4A6741"},
+                "INFJ": {"name": "The Advocate", "description": "Quiet, mystical, yet inspiring idealists with a strong sense of purpose.", "strengths": "Creative, insightful, principled", "color": "#4A6741"},
+                "INFP": {"name": "The Mediator", "description": "Poetic, kind, and altruistic, always seeking to help good causes.", "strengths": "Idealistic, empathetic, creative", "color": "#4A6741"},
+                "ENFJ": {"name": "The Protagonist", "description": "Charismatic, inspiring leaders who captivate and motivate others.", "strengths": "Charismatic, inspiring, natural leaders", "color": "#4A6741"},
+                "ENFP": {"name": "The Campaigner", "description": "Enthusiastic, creative, and sociable free spirits.", "strengths": "Enthusiastic, creative, sociable", "color": "#4A6741"},
+                "ISTJ": {"name": "The Logistician", "description": "Practical and fact-minded individuals whose reliability is unshakable.", "strengths": "Responsible, organized, practical", "color": "#4A6741"},
+                "ISFJ": {"name": "The Defender", "description": "Very dedicated and warm protectors, always ready to defend loved ones.", "strengths": "Supportive, reliable, patient", "color": "#4A6741"},
+                "ESTJ": {"name": "The Executive", "description": "Excellent administrators, managing things and people efficiently.", "strengths": "Organized, practical, dedicated", "color": "#4A6741"},
+                "ESFJ": {"name": "The Consul", "description": "Caring, social, and popular people who love helping others.", "strengths": "Caring, loyal, organized", "color": "#4A6741"},
+                "ISTP": {"name": "The Virtuoso", "description": "Bold and practical experimenters, masters of tools and techniques.", "strengths": "Practical, spontaneous, adaptable", "color": "#4A6741"},
+                "ISFP": {"name": "The Adventurer", "description": "Flexible, charming artists, always ready to explore new possibilities.", "strengths": "Creative, flexible, passionate", "color": "#4A6741"},
+                "ESTP": {"name": "The Entrepreneur", "description": "Smart, energetic, and perceptive people who truly enjoy living on the edge.", "strengths": "Bold, perceptive, direct", "color": "#4A6741"},
+                "ESFP": {"name": "The Entertainer", "description": "Spontaneous, energetic entertainers who love making others smile.", "strengths": "Spontaneous, enthusiastic, fun-loving", "color": "#4A6741"}
+            }
         }
     }
     
