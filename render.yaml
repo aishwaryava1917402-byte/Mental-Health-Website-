@@ -1,0 +1,36 @@
+services:
+  # Backend API (FastAPI)
+  - type: web
+    name: one-thought-api
+    runtime: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && uvicorn server:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      - key: MONGO_URL
+        sync: false
+      - key: DB_NAME
+        value: one_thought_db
+      - key: CORS_ORIGINS
+        value: "*"
+    healthCheckPath: /api/
+
+  # Frontend (React Static Site)
+  - type: web
+    name: one-thought-frontend
+    runtime: static
+    buildCommand: cd frontend && yarn install && yarn build
+    staticPublishPath: frontend/build
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: NODE_VERSION
+        value: "18"
+      - key: REACT_APP_BACKEND_URL
+        fromService:
+          type: web
+          name: one-thought-api
+          property: host
