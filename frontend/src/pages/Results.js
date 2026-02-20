@@ -228,28 +228,6 @@ const Results = () => {
           </button>
         </motion.div>
 
-        {/* Instagram CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="mt-12 text-center"
-        >
-          <p className="text-muted-foreground font-body mb-4">
-            Follow us for daily mental health insights and support
-          </p>
-          <a
-            href="https://www.instagram.com/onethoughtformentalhealth?igsh=bzRnd3podWZiMnpj"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-body font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all"
-            data-testid="instagram-cta-button"
-          >
-            <Instagram className="w-5 h-5" strokeWidth={1.5} />
-            Follow @onethoughtformentalhealth
-          </a>
-        </motion.div>
-
         {/* Disclaimer */}
         <motion.div
           initial={{ opacity: 0 }}
