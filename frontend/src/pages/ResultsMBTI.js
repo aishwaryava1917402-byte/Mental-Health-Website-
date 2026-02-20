@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { Home, Instagram, RefreshCcw, Heart } from "lucide-react";
@@ -9,34 +9,45 @@ const ResultsMBTI = () => {
   const navigate = useNavigate();
   const [result, setResult] = useState(null);
   const [showFullResults, setShowFullResults] = useState(false);
+  const hasProcessedState = useRef(false);
 
   useEffect(() => {
-    if (!location.state || !location.state.answers) {
-      navigate("/");
-      return;
+    // Only process state once to avoid redirect loops
+    if (hasProcessedState.current) return;
+    
+    // Check if state exists (passed from navigation)
+    if (location.state && location.state.answers) {
+      hasProcessedState.current = true;
+      const { answers, assessment } = location.state;
+      
+      // Calculate MBTI type
+      const dimensions = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+      
+      assessment.questions.forEach(question => {
+        const answer = answers[question.id];
+        if (answer) {
+          dimensions[answer]++;
+        }
+      });
+
+      const type = 
+        (dimensions.E >= dimensions.I ? 'E' : 'I') +
+        (dimensions.S >= dimensions.N ? 'S' : 'N') +
+        (dimensions.T >= dimensions.F ? 'T' : 'F') +
+        (dimensions.J >= dimensions.P ? 'J' : 'P');
+
+      const typeData = assessment.types[type];
+      
+      setResult({ type, typeData, assessmentName: assessment.name });
+    } else {
+      // Small delay to ensure state is fully propagated before redirecting
+      const timer = setTimeout(() => {
+        if (!hasProcessedState.current && (!location.state || !location.state.answers)) {
+          navigate("/");
+        }
+      }, 100);
+      return () => clearTimeout(timer);
     }
-
-    const { answers, assessment } = location.state;
-    
-    // Calculate MBTI type
-    const dimensions = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
-    
-    assessment.questions.forEach(question => {
-      const answer = answers[question.id];
-      if (answer) {
-        dimensions[answer]++;
-      }
-    });
-
-    const type = 
-      (dimensions.E >= dimensions.I ? 'E' : 'I') +
-      (dimensions.S >= dimensions.N ? 'S' : 'N') +
-      (dimensions.T >= dimensions.F ? 'T' : 'F') +
-      (dimensions.J >= dimensions.P ? 'J' : 'P');
-
-    const typeData = assessment.types[type];
-    
-    setResult({ type, typeData, assessmentName: assessment.name });
   }, [location, navigate]);
 
   if (!result) {

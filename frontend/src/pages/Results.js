@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { Home, Instagram, RefreshCcw, Heart } from "lucide-react";
@@ -9,16 +9,27 @@ const Results = () => {
   const navigate = useNavigate();
   const [result, setResult] = useState(null);
   const [showFullResults, setShowFullResults] = useState(false);
+  const hasProcessedState = useRef(false);
 
   useEffect(() => {
-    if (!location.state || !location.state.score) {
-      navigate("/");
-      return;
+    // Only process state once to avoid redirect loops
+    if (hasProcessedState.current) return;
+    
+    // Check if state exists (passed from navigation)
+    if (location.state && location.state.score !== undefined) {
+      hasProcessedState.current = true;
+      const { score, assessment } = location.state;
+      const interpretation = getInterpretation(score, assessment.interpretation);
+      setResult({ score, interpretation, assessmentName: assessment.name });
+    } else {
+      // Small delay to ensure state is fully propagated before redirecting
+      const timer = setTimeout(() => {
+        if (!hasProcessedState.current && (!location.state || location.state.score === undefined)) {
+          navigate("/");
+        }
+      }, 100);
+      return () => clearTimeout(timer);
     }
-
-    const { score, assessment } = location.state;
-    const interpretation = getInterpretation(score, assessment.interpretation);
-    setResult({ score, interpretation, assessmentName: assessment.name });
   }, [location, navigate]);
 
   const getInterpretation = (score, interpretationData) => {
