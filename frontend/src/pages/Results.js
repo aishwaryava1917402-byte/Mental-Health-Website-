@@ -67,7 +67,7 @@ const Results = () => {
           <p className="text-muted-foreground font-body">{result.assessmentName}</p>
         </motion.div>
 
-        {/* Score Card */}
+        {/* Score Card - Step 1: Basic Results */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -97,36 +97,85 @@ const Results = () => {
             </h2>
           </div>
 
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-lg font-heading font-bold text-foreground mb-3">
-                What This Means
-              </h3>
-              <p className="text-muted-foreground font-body leading-relaxed" data-testid="interpretation-text">
-                {result.interpretation.description}
+          {!showFullResults ? (
+            /* Instagram Follow Gate */
+            <div className="text-center space-y-6 py-8">
+              <div className="mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4">
+                  <Instagram className="w-8 h-8 text-white" strokeWidth={1.5} />
+                </div>
+                <h3 className="text-2xl font-heading font-bold text-foreground mb-3">
+                  Want Your Detailed Analysis?
+                </h3>
+                <p className="text-muted-foreground font-body max-w-md mx-auto leading-relaxed">
+                  Follow us on Instagram for daily mental health tips and support, then unlock your complete results with personalized recommendations!
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <a
+                  href="https://www.instagram.com/onethoughtformentalhealth?igsh=bzRnd3podWZiMnpj"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-body font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+                >
+                  <Instagram className="w-5 h-5" strokeWidth={1.5} />
+                  Follow @onethoughtformentalhealth
+                </a>
+
+                <div className="pt-4">
+                  <button
+                    onClick={() => setShowFullResults(true)}
+                    className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-body font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all"
+                  >
+                    I've Followed - Show Full Results
+                  </button>
+                </div>
+              </div>
+
+              <p className="text-xs text-muted-foreground font-body mt-6">
+                By clicking above, you confirm you've followed our Instagram page
               </p>
             </div>
+          ) : (
+            /* Full Detailed Results */
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-lg font-heading font-bold text-foreground mb-3">
+                  What This Means
+                </h3>
+                <p className="text-muted-foreground font-body leading-relaxed" data-testid="interpretation-text">
+                  {result.interpretation.description}
+                </p>
+              </div>
 
-            <div className="border-t border-border pt-6">
-              <h3 className="text-lg font-heading font-bold text-foreground mb-3">
-                Next Steps
-              </h3>
-              <ul className="space-y-2 text-muted-foreground font-body">
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
-                  <span>Share these results with a mental health professional if needed</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
-                  <span>Consider taking other assessments to get a fuller picture</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
-                  <span>Reach out for support - you don't have to face this alone</span>
-                </li>
-              </ul>
+              <div className="border-t border-border pt-6">
+                <h3 className="text-lg font-heading font-bold text-foreground mb-3">
+                  Next Steps
+                </h3>
+                <ul className="space-y-2 text-muted-foreground font-body">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Share these results with a mental health professional if needed</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Consider taking other assessments to get a fuller picture</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Reach out for support - you don't have to face this alone</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="border-t border-border pt-6 bg-primary/5 -mx-8 -mb-8 px-8 pb-8 rounded-b-3xl">
+                <p className="text-sm text-center text-muted-foreground font-body">
+                  🙏 Thank you for following! Stay tuned for daily mental health insights on Instagram
+                </p>
+              </div>
             </div>
-          </div>
+          )}
         </motion.div>
 
         {/* Crisis Support */}
