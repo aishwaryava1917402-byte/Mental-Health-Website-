@@ -116,16 +116,39 @@ const ResultsMBTI = () => {
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
+                {/* Copy Username Button */}
+                <button
+                  onClick={copyUsername}
+                  className="w-full max-w-sm mx-auto flex items-center justify-center gap-2 px-6 py-4 bg-primary text-primary-foreground rounded-full font-body font-semibold hover:opacity-90 transition-opacity"
+                >
+                  {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
+                  {copied ? "Copied! Now paste in Instagram" : `Copy Username: @${INSTAGRAM_USERNAME}`}
+                </button>
+
+                {/* Open Instagram */}
                 <a
                   href="https://instagram.com/onethoughtformentalhealth"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-body font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+                  className="w-full max-w-sm mx-auto flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-body font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
                 >
                   <Instagram className="w-5 h-5" strokeWidth={1.5} />
-                  Follow @onethoughtformentalhealth
+                  Open Instagram & Follow
                 </a>
+
+                {/* Search Instructions */}
+                <div className="bg-muted/30 rounded-xl p-4 max-w-sm mx-auto text-left">
+                  <div className="flex items-start gap-3">
+                    <Search className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="text-sm font-semibold text-foreground font-body mb-1">If link doesn't work:</p>
+                      <p className="text-sm text-muted-foreground font-body">
+                        Open Instagram → Search → <strong>{INSTAGRAM_USERNAME}</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="pt-4">
                   <button
