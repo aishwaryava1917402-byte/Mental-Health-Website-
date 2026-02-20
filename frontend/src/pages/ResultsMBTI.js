@@ -1,7 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
-import { Home, Instagram, RefreshCcw, Heart } from "lucide-react";
+import { Home, Instagram, RefreshCcw, Heart, Copy, Check, Search } from "lucide-react";
+
+const INSTAGRAM_USERNAME = "onethoughtformentalhealth";
 
 const ResultsMBTI = () => {
   const { assessmentId } = useParams();
@@ -10,6 +12,13 @@ const ResultsMBTI = () => {
   const [result, setResult] = useState(null);
   const [showFullResults, setShowFullResults] = useState(false);
   const hasProcessedState = useRef(false);
+  const [copied, setCopied] = useState(false);
+
+  const copyUsername = () => {
+    navigator.clipboard.writeText(INSTAGRAM_USERNAME);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   useEffect(() => {
     // Only process state once to avoid redirect loops
