@@ -144,34 +144,102 @@ const Results = () => {
                 <h3 className="text-lg font-heading font-bold text-foreground mb-3">
                   What This Means
                 </h3>
-                <p className="text-muted-foreground font-body leading-relaxed" data-testid="interpretation-text">
+                <p className="text-muted-foreground font-body leading-relaxed mb-4" data-testid="interpretation-text">
                   {result.interpretation.description}
                 </p>
+                
+                {/* Additional detailed explanation */}
+                <div className="bg-muted/30 rounded-xl p-4 space-y-3">
+                  <p className="text-sm text-muted-foreground font-body leading-relaxed">
+                    Your score of <strong>{result.score}</strong> indicates <strong>{result.interpretation.level.toLowerCase()}</strong> levels 
+                    based on this standardized assessment. This means you may be experiencing some symptoms, but remember that 
+                    this is just a screening tool and not a clinical diagnosis.
+                  </p>
+                  <p className="text-sm text-muted-foreground font-body leading-relaxed">
+                    Mental health exists on a spectrum, and experiencing symptoms doesn't define you. Many people go through 
+                    similar challenges, and there are effective treatments and strategies available. The most important step 
+                    is acknowledging how you're feeling and taking action to support your wellbeing.
+                  </p>
+                </div>
               </div>
 
               <div className="border-t border-border pt-6">
                 <h3 className="text-lg font-heading font-bold text-foreground mb-3">
-                  Next Steps
+                  Understanding Your Results
                 </h3>
-                <ul className="space-y-2 text-muted-foreground font-body">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>Share these results with a mental health professional if needed</span>
+                <div className="space-y-3">
+                  <div className="bg-primary/5 rounded-lg p-4">
+                    <h4 className="font-semibold text-foreground font-body mb-2">What causes these symptoms?</h4>
+                    <p className="text-sm text-muted-foreground font-body leading-relaxed">
+                      Mental health symptoms can result from various factors including stress, life changes, genetics, 
+                      physical health conditions, sleep patterns, or chemical imbalances in the brain. Understanding 
+                      that these symptoms have real causes can help reduce self-blame and encourage seeking support.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-primary/5 rounded-lg p-4">
+                    <h4 className="font-semibold text-foreground font-body mb-2">Is this normal?</h4>
+                    <p className="text-sm text-muted-foreground font-body leading-relaxed">
+                      You're not alone - millions of people experience mental health challenges. In India alone, 
+                      1 in 7 people experience mental health issues. Seeking help and taking assessments like this 
+                      shows strength and self-awareness, not weakness.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="border-t border-border pt-6">
+                <h3 className="text-lg font-heading font-bold text-foreground mb-3">
+                  Recommended Next Steps
+                </h3>
+                <ul className="space-y-3 text-muted-foreground font-body">
+                  <li className="flex items-start gap-3">
+                    <span className="text-primary mt-1 text-xl">1.</span>
+                    <div>
+                      <strong className="text-foreground">Share with a professional:</strong> Consider showing these 
+                      results to a mental health counselor, therapist, or psychiatrist. They can provide a proper 
+                      evaluation and discuss treatment options tailored to your needs.
+                    </div>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>Consider taking other assessments to get a fuller picture</span>
+                  <li className="flex items-start gap-3">
+                    <span className="text-primary mt-1 text-xl">2.</span>
+                    <div>
+                      <strong className="text-foreground">Take other assessments:</strong> Getting a fuller picture 
+                      of your mental health by taking multiple assessments can help identify patterns and provide 
+                      more comprehensive insights.
+                    </div>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>Reach out for support - you don't have to face this alone</span>
+                  <li className="flex items-start gap-3">
+                    <span className="text-primary mt-1 text-xl">3.</span>
+                    <div>
+                      <strong className="text-foreground">Practice self-care:</strong> Prioritize sleep, nutrition, 
+                      exercise, and activities that bring you joy. These foundational habits significantly impact 
+                      mental health.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-primary mt-1 text-xl">4.</span>
+                    <div>
+                      <strong className="text-foreground">Build a support system:</strong> Reach out to trusted 
+                      friends, family, or support groups. You don't have to face this alone - connection and 
+                      community are powerful healing tools.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-primary mt-1 text-xl">5.</span>
+                    <div>
+                      <strong className="text-foreground">Monitor your progress:</strong> Consider retaking this 
+                      assessment periodically to track how you're feeling over time and evaluate the effectiveness 
+                      of any interventions you try.
+                    </div>
                   </li>
                 </ul>
               </div>
 
               <div className="border-t border-border pt-6 bg-primary/5 -mx-8 -mb-8 px-8 pb-8 rounded-b-3xl">
                 <p className="text-sm text-center text-muted-foreground font-body">
-                  🙏 Thank you for following! Stay tuned for daily mental health insights on Instagram
+                  🙏 Thank you for following! Stay tuned for daily mental health insights, coping strategies, 
+                  and supportive community on Instagram @onethoughtformentalhealth
                 </p>
               </div>
             </div>
