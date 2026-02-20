@@ -116,6 +116,14 @@ async def get_assessments():
             "description": "Boundary & Self-Care Assessment",
             "duration": "2-3 minutes",
             "image": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+        },
+        {
+            "id": "mbti",
+            "name": "MBTI Personality Test",
+            "short_name": "MBTI",
+            "description": "Myers-Briggs Type Indicator",
+            "duration": "5-7 minutes",
+            "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
         }
     ]
     return assessments
