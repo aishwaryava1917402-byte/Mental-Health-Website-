@@ -126,39 +126,132 @@ const ResultsMBTI = () => {
             <div className="space-y-6">
               <div>
                 <h4 className="text-lg font-heading font-bold text-foreground mb-3">About Your Type</h4>
-                <p className="text-muted-foreground font-body leading-relaxed">{result.typeData.description}</p>
+                <p className="text-muted-foreground font-body leading-relaxed mb-4">{result.typeData.description}</p>
+                
+                <div className="bg-muted/30 rounded-xl p-4">
+                  <p className="text-sm text-muted-foreground font-body leading-relaxed">
+                    As an <strong>{result.type}</strong> personality type, you have a unique way of processing information, 
+                    making decisions, and interacting with the world. Understanding your type can help you leverage your 
+                    natural strengths, improve communication with others, and find environments where you thrive.
+                  </p>
+                </div>
               </div>
 
               <div className="border-t border-border pt-6">
                 <h4 className="text-lg font-heading font-bold text-foreground mb-3">Key Strengths</h4>
-                <p className="text-muted-foreground font-body leading-relaxed">{result.typeData.strengths}</p>
+                <p className="text-muted-foreground font-body leading-relaxed mb-3">{result.typeData.strengths}</p>
+                
+                <div className="bg-primary/5 rounded-lg p-4">
+                  <p className="text-sm text-muted-foreground font-body leading-relaxed">
+                    These strengths are your natural talents - the things that come easily to you and energize you. 
+                    Recognizing and developing these qualities can lead to greater satisfaction in your career, 
+                    relationships, and personal growth journey.
+                  </p>
+                </div>
               </div>
 
               <div className="border-t border-border pt-6">
                 <h4 className="text-lg font-heading font-bold text-foreground mb-3">Understanding MBTI Dimensions</h4>
-                <ul className="space-y-2 text-muted-foreground font-body">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span><strong>{result.type[0]}:</strong> {result.type[0] === 'E' ? 'Extraversion - Energized by social interaction' : 'Introversion - Energized by solitude'}</span>
+                <p className="text-sm text-muted-foreground font-body mb-4">
+                  Your personality type is determined by your preferences across four dimensions. Here's what each letter means:
+                </p>
+                <ul className="space-y-4 text-muted-foreground font-body">
+                  <li className="bg-muted/20 rounded-lg p-4">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl font-heading font-bold text-primary">{result.type[0]}</span>
+                      <div>
+                        <strong className="text-foreground">
+                          {result.type[0] === 'E' ? 'Extraversion (E)' : 'Introversion (I)'}
+                        </strong>
+                        <p className="text-sm mt-1">
+                          {result.type[0] === 'E' 
+                            ? 'You gain energy from social interaction and external activities. You tend to think out loud, enjoy being around people, and prefer action-oriented approaches.' 
+                            : 'You recharge through solitude and internal reflection. You prefer deep one-on-one conversations, think before speaking, and need quiet time to process.'}
+                        </p>
+                      </div>
+                    </div>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span><strong>{result.type[1]}:</strong> {result.type[1] === 'S' ? 'Sensing - Focus on facts and details' : 'Intuition - Focus on patterns and possibilities'}</span>
+                  <li className="bg-muted/20 rounded-lg p-4">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl font-heading font-bold text-primary">{result.type[1]}</span>
+                      <div>
+                        <strong className="text-foreground">
+                          {result.type[1] === 'S' ? 'Sensing (S)' : 'Intuition (N)'}
+                        </strong>
+                        <p className="text-sm mt-1">
+                          {result.type[1] === 'S' 
+                            ? 'You focus on concrete facts, details, and present realities. You trust what you can see, hear, and touch, and prefer practical, proven methods.' 
+                            : 'You focus on patterns, possibilities, and future implications. You trust your insights and hunches, and enjoy exploring abstract ideas and innovative approaches.'}
+                        </p>
+                      </div>
+                    </div>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span><strong>{result.type[2]}:</strong> {result.type[2] === 'T' ? 'Thinking - Make decisions based on logic' : 'Feeling - Make decisions based on values'}</span>
+                  <li className="bg-muted/20 rounded-lg p-4">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl font-heading font-bold text-primary">{result.type[2]}</span>
+                      <div>
+                        <strong className="text-foreground">
+                          {result.type[2] === 'T' ? 'Thinking (T)' : 'Feeling (F)'}
+                        </strong>
+                        <p className="text-sm mt-1">
+                          {result.type[2] === 'T' 
+                            ? 'You make decisions based on logic, objective analysis, and principles. You value fairness, truth, and consistency in your decision-making process.' 
+                            : 'You make decisions based on personal values, harmony, and the impact on people. You prioritize empathy, relationships, and what feels right.'}
+                        </p>
+                      </div>
+                    </div>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span><strong>{result.type[3]}:</strong> {result.type[3] === 'J' ? 'Judging - Prefer structure and planning' : 'Perceiving - Prefer flexibility and spontaneity'}</span>
+                  <li className="bg-muted/20 rounded-lg p-4">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl font-heading font-bold text-primary">{result.type[3]}</span>
+                      <div>
+                        <strong className="text-foreground">
+                          {result.type[3] === 'J' ? 'Judging (J)' : 'Perceiving (P)'}
+                        </strong>
+                        <p className="text-sm mt-1">
+                          {result.type[3] === 'J' 
+                            ? 'You prefer structure, organization, and having things decided. You like planning ahead, meeting deadlines early, and having clear goals and schedules.' 
+                            : 'You prefer flexibility, spontaneity, and keeping options open. You adapt easily to change, work well under pressure, and enjoy exploring multiple possibilities.'}
+                        </p>
+                      </div>
+                    </div>
                   </li>
                 </ul>
               </div>
 
+              <div className="border-t border-border pt-6">
+                <h4 className="text-lg font-heading font-bold text-foreground mb-3">Using This Knowledge</h4>
+                <div className="space-y-3">
+                  <div className="bg-primary/5 rounded-lg p-4">
+                    <h5 className="font-semibold text-foreground font-body mb-2">Personal Growth</h5>
+                    <p className="text-sm text-muted-foreground font-body leading-relaxed">
+                      Use your type insights to understand why certain situations energize or drain you, and make 
+                      choices that align with your natural preferences while also developing your less-preferred functions.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-primary/5 rounded-lg p-4">
+                    <h5 className="font-semibold text-foreground font-body mb-2">Relationships</h5>
+                    <p className="text-sm text-muted-foreground font-body leading-relaxed">
+                      Understanding personality differences helps you communicate better, appreciate others' perspectives, 
+                      and build stronger connections by recognizing that different doesn't mean wrong.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-primary/5 rounded-lg p-4">
+                    <h5 className="font-semibold text-foreground font-body mb-2">Career & Work</h5>
+                    <p className="text-sm text-muted-foreground font-body leading-relaxed">
+                      Knowing your type can guide career choices, help you find roles that suit your strengths, 
+                      and understand your work style preferences for maximum satisfaction and productivity.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               <div className="border-t border-border pt-6 bg-primary/5 -mx-8 -mb-8 px-8 pb-8 rounded-b-3xl">
                 <p className="text-sm text-center text-muted-foreground font-body">
-                  🙏 Thank you for following! Discover more about your personality type on Instagram
+                  🙏 Thank you for following! Discover more about personality types, self-awareness, and personal 
+                  development on Instagram @onethoughtformentalhealth
                 </p>
               </div>
             </div>
