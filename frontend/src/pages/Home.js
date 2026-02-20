@@ -75,22 +75,82 @@ const Home = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="inline-flex items-center gap-3 bg-card px-6 py-4 rounded-full shadow-xl"
+              className="inline-flex items-center gap-3 bg-card px-6 py-4 rounded-full shadow-xl cursor-pointer hover:shadow-2xl transition-shadow"
+              onClick={() => setShowInstaModal(true)}
+              data-testid="instagram-button"
             >
               <Instagram className="w-5 h-5 text-secondary" strokeWidth={1.5} />
-              <a
-                href="https://instagram.com/onethoughtformentalhealth"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground font-body font-semibold hover:text-primary transition-colors"
-                data-testid="instagram-link"
-              >
-                @onethoughtformentalhealth
-              </a>
+              <span className="text-foreground font-body font-semibold">
+                @{INSTAGRAM_USERNAME}
+              </span>
             </motion.div>
           </motion.div>
         </div>
       </section>
+
+      {/* Instagram Modal */}
+      {showInstaModal && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={() => setShowInstaModal(false)}>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-card rounded-3xl p-8 max-w-md w-full shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="text-center mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4">
+                <Instagram className="w-8 h-8 text-white" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-2xl font-heading font-bold text-foreground mb-2">Follow Us on Instagram</h3>
+              <p className="text-muted-foreground font-body">@{INSTAGRAM_USERNAME}</p>
+            </div>
+
+            <div className="space-y-3">
+              {/* Copy Username Button */}
+              <button
+                onClick={copyUsername}
+                className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-primary text-primary-foreground rounded-full font-body font-semibold hover:opacity-90 transition-opacity"
+              >
+                {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
+                {copied ? "Copied! Now paste in Instagram" : "Copy Username"}
+              </button>
+
+              {/* Open Instagram App */}
+              <a
+                href="https://instagram.com/onethoughtformentalhealth"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-body font-semibold hover:opacity-90 transition-opacity"
+              >
+                <Instagram className="w-5 h-5" />
+                Open Instagram
+              </a>
+
+              {/* Search Instructions */}
+              <div className="bg-muted/30 rounded-xl p-4 mt-4">
+                <div className="flex items-start gap-3">
+                  <Search className="w-5 h-5 text-primary mt-0.5" />
+                  <div>
+                    <p className="text-sm font-semibold text-foreground font-body mb-1">If link doesn't work:</p>
+                    <p className="text-sm text-muted-foreground font-body">
+                      1. Open Instagram app<br/>
+                      2. Tap the search icon<br/>
+                      3. Search: <strong>{INSTAGRAM_USERNAME}</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button 
+              onClick={() => setShowInstaModal(false)}
+              className="w-full mt-6 text-muted-foreground font-body text-sm hover:text-foreground transition-colors"
+            >
+              Close
+            </button>
+          </motion.div>
+        </div>
+      )}
 
       {/* Assessments Grid */}
       <section className="py-16 px-6">
