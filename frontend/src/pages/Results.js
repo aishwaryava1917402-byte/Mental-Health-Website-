@@ -178,8 +178,8 @@ const Results = () => {
           )}
         </motion.div>
 
-        {/* Crisis Support */}
-        {(result.interpretation.level.includes("Severe") || 
+        {/* Crisis Support - Only show with full results */}
+        {showFullResults && (result.interpretation.level.includes("Severe") || 
           result.interpretation.level.includes("High")) && (
           <motion.div
             initial={{ opacity: 0 }}
