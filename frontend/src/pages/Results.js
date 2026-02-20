@@ -250,9 +250,12 @@ const Results = () => {
           transition={{ delay: 0.7 }}
           className="mt-12 bg-muted/30 rounded-2xl p-6 text-center"
         >
-          <p className="text-sm text-muted-foreground font-body">
+          <p className="text-sm text-muted-foreground font-body mb-3">
             This screening is not a diagnosis. Results are for educational purposes only.
             Please consult with a qualified mental health professional for proper evaluation and treatment.
+          </p>
+          <p className="text-xs text-muted-foreground font-body">
+            <strong>Crisis Support (India):</strong> Tele MANAS: 14416 | Vandrevala Foundation: 1860-2662-345
           </p>
         </motion.div>
       </div>
