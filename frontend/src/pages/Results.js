@@ -8,6 +8,7 @@ const Results = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [result, setResult] = useState(null);
+  const [showFullResults, setShowFullResults] = useState(false);
 
   useEffect(() => {
     if (!location.state || !location.state.score) {
