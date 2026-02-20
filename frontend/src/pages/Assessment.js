@@ -155,7 +155,7 @@ const Assessment = () => {
         </AnimatePresence>
 
         {/* Navigation */}
-        <div className="flex items-center justify-between pb-24 sm:pb-20">
+        <div className="flex items-center justify-between mb-28 sm:mb-20">
           <button
             onClick={goToPrevious}
             disabled={currentQuestion === 0}
