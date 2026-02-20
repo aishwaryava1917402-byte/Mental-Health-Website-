@@ -175,7 +175,7 @@ const Home = () => {
       <footer className="py-8 px-6 border-t border-border">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-muted-foreground font-body text-sm">
-            © 2024 One Thought for Therapy. Supporting mental wellness, one assessment at a time.
+            © 2025 One Thought for Therapy. Supporting mental wellness, one assessment at a time.
           </p>
         </div>
       </footer>
