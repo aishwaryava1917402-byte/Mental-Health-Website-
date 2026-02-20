@@ -1,15 +1,25 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Heart, Instagram, ArrowRight } from "lucide-react";
+import { Heart, Instagram, ArrowRight, Copy, Check, Search } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
+const INSTAGRAM_USERNAME = "onethoughtformentalhealth";
+
 const Home = () => {
   const navigate = useNavigate();
   const [assessments, setAssessments] = useState([]);
+  const [showInstaModal, setShowInstaModal] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const copyUsername = () => {
+    navigator.clipboard.writeText(INSTAGRAM_USERNAME);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   useEffect(() => {
     const fetchAssessments = async () => {
