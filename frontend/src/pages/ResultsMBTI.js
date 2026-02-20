@@ -81,39 +81,88 @@ const ResultsMBTI = () => {
             </h3>
           </div>
 
-          <div className="space-y-6">
-            <div>
-              <h4 className="text-lg font-heading font-bold text-foreground mb-3">About Your Type</h4>
-              <p className="text-muted-foreground font-body leading-relaxed">{result.typeData.description}</p>
-            </div>
+          {!showFullResults ? (
+            /* Instagram Follow Gate */
+            <div className="text-center space-y-6 py-8">
+              <div className="mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4">
+                  <Instagram className="w-8 h-8 text-white" strokeWidth={1.5} />
+                </div>
+                <h4 className="text-2xl font-heading font-bold text-foreground mb-3">
+                  Unlock Your Complete Personality Analysis
+                </h4>
+                <p className="text-muted-foreground font-body max-w-md mx-auto leading-relaxed">
+                  Follow us on Instagram for daily insights on personality types, mental health, and personal growth. Then get your detailed MBTI breakdown!
+                </p>
+              </div>
 
-            <div className="border-t border-border pt-6">
-              <h4 className="text-lg font-heading font-bold text-foreground mb-3">Key Strengths</h4>
-              <p className="text-muted-foreground font-body leading-relaxed">{result.typeData.strengths}</p>
-            </div>
+              <div className="space-y-4">
+                <a
+                  href="https://www.instagram.com/onethoughtformentalhealth?igsh=bzRnd3podWZiMnpj"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-body font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+                >
+                  <Instagram className="w-5 h-5" strokeWidth={1.5} />
+                  Follow @onethoughtformentalhealth
+                </a>
 
-            <div className="border-t border-border pt-6">
-              <h4 className="text-lg font-heading font-bold text-foreground mb-3">Understanding MBTI Dimensions</h4>
-              <ul className="space-y-2 text-muted-foreground font-body">
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
-                  <span><strong>{result.type[0]}:</strong> {result.type[0] === 'E' ? 'Extraversion - Energized by social interaction' : 'Introversion - Energized by solitude'}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
-                  <span><strong>{result.type[1]}:</strong> {result.type[1] === 'S' ? 'Sensing - Focus on facts and details' : 'Intuition - Focus on patterns and possibilities'}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
-                  <span><strong>{result.type[2]}:</strong> {result.type[2] === 'T' ? 'Thinking - Make decisions based on logic' : 'Feeling - Make decisions based on values'}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
-                  <span><strong>{result.type[3]}:</strong> {result.type[3] === 'J' ? 'Judging - Prefer structure and planning' : 'Perceiving - Prefer flexibility and spontaneity'}</span>
-                </li>
-              </ul>
+                <div className="pt-4">
+                  <button
+                    onClick={() => setShowFullResults(true)}
+                    className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-body font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all"
+                  >
+                    I've Followed - Show Full Analysis
+                  </button>
+                </div>
+              </div>
+
+              <p className="text-xs text-muted-foreground font-body mt-6">
+                By clicking above, you confirm you've followed our Instagram page
+              </p>
             </div>
-          </div>
+          ) : (
+            /* Full Detailed Results */
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-lg font-heading font-bold text-foreground mb-3">About Your Type</h4>
+                <p className="text-muted-foreground font-body leading-relaxed">{result.typeData.description}</p>
+              </div>
+
+              <div className="border-t border-border pt-6">
+                <h4 className="text-lg font-heading font-bold text-foreground mb-3">Key Strengths</h4>
+                <p className="text-muted-foreground font-body leading-relaxed">{result.typeData.strengths}</p>
+              </div>
+
+              <div className="border-t border-border pt-6">
+                <h4 className="text-lg font-heading font-bold text-foreground mb-3">Understanding MBTI Dimensions</h4>
+                <ul className="space-y-2 text-muted-foreground font-body">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span><strong>{result.type[0]}:</strong> {result.type[0] === 'E' ? 'Extraversion - Energized by social interaction' : 'Introversion - Energized by solitude'}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span><strong>{result.type[1]}:</strong> {result.type[1] === 'S' ? 'Sensing - Focus on facts and details' : 'Intuition - Focus on patterns and possibilities'}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span><strong>{result.type[2]}:</strong> {result.type[2] === 'T' ? 'Thinking - Make decisions based on logic' : 'Feeling - Make decisions based on values'}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span><strong>{result.type[3]}:</strong> {result.type[3] === 'J' ? 'Judging - Prefer structure and planning' : 'Perceiving - Prefer flexibility and spontaneity'}</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="border-t border-border pt-6 bg-primary/5 -mx-8 -mb-8 px-8 pb-8 rounded-b-3xl">
+                <p className="text-sm text-center text-muted-foreground font-body">
+                  🙏 Thank you for following! Discover more about your personality type on Instagram
+                </p>
+              </div>
+            </div>
+          )}
         </motion.div>
 
         <motion.div
