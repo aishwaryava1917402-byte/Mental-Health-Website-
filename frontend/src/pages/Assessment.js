@@ -46,8 +46,13 @@ const Assessment = () => {
   };
 
   const submitAssessment = () => {
-    const totalScore = Object.values(answers).reduce((sum, val) => sum + val, 0);
-    navigate(`/results/${assessmentId}`, { state: { score: totalScore, assessment } });
+    // For MBTI, navigate to special results page
+    if (assessmentId === 'mbti') {
+      navigate(`/results-mbti/${assessmentId}`, { state: { answers, assessment } });
+    } else {
+      const totalScore = Object.values(answers).reduce((sum, val) => sum + val, 0);
+      navigate(`/results/${assessmentId}`, { state: { score: totalScore, assessment } });
+    }
   };
 
   if (loading || !assessment) {
