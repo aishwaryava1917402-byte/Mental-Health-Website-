@@ -56,22 +56,22 @@ const ResultsMBTI = () => {
   };
 
   return (
-    <div className=\"min-h-screen py-12 px-6\">
-      <div className=\"max-w-4xl mx-auto\">
+    <div className="min-h-screen py-12 px-6">
+      <div className="max-w-4xl mx-auto">
         {/* Header */}
         <motion.div
-          initial=\"initial\"
-          animate=\"animate\"
+          initial="initial"
+          animate="animate"
           variants={fadeInUp}
-          className=\"text-center mb-12\"
+          className="text-center mb-12"
         >
-          <div className=\"inline-flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full mb-6\">
-            <Heart className=\"w-10 h-10 text-primary\" strokeWidth={1.5} />
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full mb-6">
+            <Heart className="w-10 h-10 text-primary" strokeWidth={1.5} />
           </div>
-          <h1 className=\"text-3xl sm:text-4xl font-heading font-bold text-foreground mb-3\">
+          <h1 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-3">
             Your Personality Type
           </h1>
-          <p className=\"text-muted-foreground font-body\">{result.assessmentName}</p>
+          <p className="text-muted-foreground font-body">{result.assessmentName}</p>
         </motion.div>
 
         {/* Type Card */}
