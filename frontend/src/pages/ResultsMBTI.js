@@ -194,9 +194,12 @@ const ResultsMBTI = () => {
           transition={{ delay: 0.7 }}
           className="mt-12 bg-muted/30 rounded-2xl p-6 text-center"
         >
-          <p className="text-sm text-muted-foreground font-body">
+          <p className="text-sm text-muted-foreground font-body mb-3">
             This is a simplified MBTI assessment for self-discovery and entertainment purposes. 
             For a comprehensive personality analysis, consider taking the official MBTI test with a certified practitioner.
+          </p>
+          <p className="text-xs text-muted-foreground font-body">
+            <strong>Mental Health Support (India):</strong> Tele MANAS: 14416 | Vandrevala Foundation: 1860-2662-345
           </p>
         </motion.div>
       </div>
