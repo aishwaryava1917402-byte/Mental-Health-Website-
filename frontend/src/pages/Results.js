@@ -188,16 +188,31 @@ const Results = () => {
             className="bg-secondary/10 border-2 border-secondary rounded-2xl p-6 mb-8"
             data-testid="crisis-support-banner"
           >
-            <h3 className="text-lg font-heading font-bold text-foreground mb-2">
+            <h3 className="text-lg font-heading font-bold text-foreground mb-3">
               Need Immediate Support?
             </h3>
-            <p className="text-muted-foreground font-body mb-3">
+            <p className="text-muted-foreground font-body mb-4">
               If you're in crisis or having thoughts of self-harm, please reach out immediately:
             </p>
-            <div className="space-y-1 text-foreground font-body">
-              <p>• National Crisis Hotline: 988</p>
-              <p>• Crisis Text Line: Text HOME to 741741</p>
-              <p>• Emergency Services: 911</p>
+            
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-semibold text-foreground font-body mb-2">🇮🇳 India - Mental Health Helplines:</h4>
+                <div className="space-y-1 text-foreground font-body ml-4">
+                  <p>• <strong>Tele MANAS:</strong> 14416 or 1800-891-4416 (24/7 mental health support)</p>
+                  <p>• <strong>Vandrevala Foundation:</strong> 1860-2662-345 or 1800-2333-330 (24/7)</p>
+                  <p>• <strong>iCall:</strong> 9152987821 (Mon-Sat, 8 AM - 10 PM)</p>
+                </div>
+              </div>
+              
+              <div className="border-t border-secondary/30 pt-3">
+                <h4 className="font-semibold text-foreground font-body mb-2">International:</h4>
+                <div className="space-y-1 text-foreground font-body ml-4">
+                  <p>• <strong>USA - Crisis Hotline:</strong> 988</p>
+                  <p>• <strong>USA - Crisis Text Line:</strong> Text HOME to 741741</p>
+                  <p>• <strong>Emergency Services:</strong> 112 (India) or 911 (USA)</p>
+                </div>
+              </div>
             </div>
           </motion.div>
         )}
