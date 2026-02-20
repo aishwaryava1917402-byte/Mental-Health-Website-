@@ -109,7 +109,7 @@ const ResultsMBTI = () => {
 
               <div className="space-y-4">
                 <a
-                  href="https://www.instagram.com/onethoughtformentalhealth/"
+                  href="https://www.instagram.com/onethoughtformentalhealth?utm_source=qr&igsh=bzRnd3podWZiMnpj"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-body font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
